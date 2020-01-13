@@ -14,3 +14,5 @@ allow rild fsg_file:dir { read open search };
 allow rild fsg_file:lnk_file read;
 allow rild persist_file:dir search;
 allow rild proc:file read;
+allow rild proc:file open;
+allow rild unlabeled:dir search;
