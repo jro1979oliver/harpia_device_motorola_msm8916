@@ -287,25 +287,6 @@ PRODUCT_PACKAGES += \
     init.power.rc \
     ueventd.rc
 
-# AOSP filesystems
-PRODUCT_PACKAGES += \
-    fsck.exfat \
-    fsck.ntfs \
-    mke2fs \
-    mkfs.exfat \
-    mkfs.ntfs \
-    mount.ntfs
-
-# AOSP packages
-PRODUCT_PACKAGES += \
-    Launcher3 \
-    messaging \
-    SoundRecorder \
-    SpeechRecorder \
-    Terminal \
-    WallpaperPicker \
-    Eleven
-
 # AOSP properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.rotation_locked=true \
