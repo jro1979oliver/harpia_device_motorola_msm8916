@@ -54,7 +54,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.latch_unsignaled=1 \
     debug.cpurend.vsync=false \
     persist.hwc.mdpcomp.enable=1
-    ro.sf.lcd_density=360
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
