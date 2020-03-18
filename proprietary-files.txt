@@ -1,43 +1,53 @@
 # Proprietary files for msm8916-common
 
 # ADSP
-bin/adsprpcd
+vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 
 # Audio
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
+vendor/lib/soundfx/libdynproc.so|af75c1b30738ae289161cdd49bec00ca82067d10
 vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
+vendor/lib/libacdbloader.so|e2c56e58f8f00795815a2eefc2f38605153e4758
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
 vendor/lib/libqct_resampler.so
 
-# Bluetooth
-lib/vendor.qti.hardware.fm@1.0.so
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
-vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
-vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so
-vendor/lib/libbtnv.so
-vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so
+# Bluetooth - from aljeter
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so|9a330c399b3b07040bb63fa62773b1f24e29fdd8
+vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so|24e30d803c9f312bc1813d89bd70cf2c64a0b9ae
+vendor/lib/libbtnv.so|88cd17744fb1a52536c1f2f77d5712f7847ca82e
+vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so|471dbf178e4c0708bb0ce3617ce767f271dbc49d
+vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so|66b356e832ec1c045b80b1508162430c99927bb3
+vendor/lib/libbt-hidlclient.so|73e677521c6f8c3dc1bfb8f344bac678ec0cc458
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|1a2dc1c2d217f47b9c99a0afa9e4912abd32e381
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|b5465f0bc302b47a67b34751d6f3f472af3eb75b
 
 # Camera
-lib/libmot_sensorlistener.so
+vendor/lib/libmot_sensorlistener.so
 vendor/lib/libbson.so
 vendor/lib/libfastcvopt.so
+vendor/lib/libmmcamera2_imglib_modules.so
 
 # Camera firmware
-etc/firmware/cpp_firmware_v1_4_0.fw
+vendor/firmware/cpp_firmware_v1_1_1.fw
+vendor/firmware/cpp_firmware_v1_1_6.fw
+vendor/firmware/cpp_firmware_v1_2_0.fw
+vendor/firmware/cpp_firmware_v1_4_0.fw
 
 # Display Color Calibration
+vendor/bin/mm-pp-daemon
 vendor/lib/libmm-disp-apis.so
 vendor/lib/libmm-qdcm.so
+vendor/lib/libdisp-aba.so
+vendor/lib/libmm-abl-oem.so
+vendor/lib/libmm-abl.so
 
 # DRM
-bin/qseecomd
+vendor/bin/qseecomd
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
@@ -47,10 +57,9 @@ vendor/lib/libmmQSM.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
 
-# FM Radio - from addision OPNS27.76-12-22-9
-lib/vendor.qti.hardware.fm@1.0.so|f2f8c0a7e34ce6a57212607eda7193cfc1e84db6
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|12dc40b9341f014ec834bda40cb13ebc736c21a0
+# FM Radio - from addision
 vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so|d0793240a61058da5d871e94f11f0f4afd6a4614
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|12dc40b9341f014ec834bda40cb13ebc736c21a0
 
 # GPS
 etc/flp.conf
@@ -95,88 +104,228 @@ vendor/lib/libsc-a3xx.so
 vendor/lib/libscale.so
 
 # Graphics firmware
-etc/firmware/a300_pfp.fw
-etc/firmware/a300_pm4.fw
-etc/firmware/a420_pfp.fw
-etc/firmware/a420_pm4.fw
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
+vendor/firmware/a420_pfp.fw
+vendor/firmware/a420_pm4.fw
 
-# Qualcomm framework
-bin/irsc_util
-vendor/lib/libdiag.so
-vendor/lib/libDiagService.so
-vendor/lib/libdsi_netctrl.so
-vendor/lib/libdsutils.so
-vendor/lib/libidl.so
-vendor/lib/libFileMux.so
-vendor/lib/libqcci_legacy.so
-vendor/lib/libqdi.so
-vendor/lib/libqdp.so
-vendor/lib/libqmi.so
-vendor/lib/libqmi_cci.so
-vendor/lib/libqmi_client_helper.so
-vendor/lib/libqmi_client_qmux.so
-vendor/lib/libqmi_common_so.so
-vendor/lib/libqmi_csi.so
-vendor/lib/libqmi_encdec.so
-vendor/lib/libqmiservices.so
-vendor/lib/libsmemlog.so
+# Media - from aljeter
+vendor/lib/libmm-color-convertor.so|a2f4491469425c3698e6a4a894ec46218a198f2b
+vendor/lib/libOmxAacDec.so|d4d36b943fd18b565af4ed6d81e422b60ac6b5c2
+vendor/lib/libOmxEvrcDec.so|b003a2147230e3040a2b64ba9fa94367961fc7e2
+vendor/lib/libOmxQcelp13Dec.so|8e890cbe50cb2f404648c967d00d7d0d8770bd6d
 
-# Radio
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-bin/netmgrd
-bin/qmuxd
-bin/radish
-bin/rmt_storage
-bin/qmi_motext_hook
-etc/data/dsi_config.xml
-etc/data/netmgr_config.xml
-etc/data/qmi_config.xml
-etc/permissions/qcnvitems.xml
-etc/permissions/qcrilhook.xml
--framework/qcnvitems.jar
--framework/qcrilhook.jar
-lib/libadropbox.so
-lib/libmdmcutback.so
-lib/libmotext_inf.so
-lib/libqmimotext.so
-vendor/qcril.db
-vendor/lib/libcneapiclient.so
-vendor/lib/libconfigdb.so
-vendor/lib/liblqe.so
-vendor/lib/libmdmdetect.so
-vendor/lib/libnetmgr.so
-vendor/lib/libril-qc-ltedirectdisc.so
-vendor/lib/libril-qc-qmi-1.so
-vendor/lib/libril-qc-radioconfig.so
-vendor/lib/libril-qcril-hook-oem.so
-vendor/lib/librilqmiservices.so
-vendor/lib/libsettings.so
-vendor/lib/libsystem_health_mon.so
-vendor/lib/libxml.so
-vendor/lib/libsubsystem_control.so
-vendor/lib/libSubSystemShutdown.so
+# IMS - from athene & ims.apk from daisy
+-priv-app/ims/ims.apk|88fe26fa2db888b63e59bdf942d103b91457afb4
+-vendor/app/imssettings/imssettings.apk|d34ce39b079627024af4b3af5d9854aec5d2295e
+-vendor/framework/qti-vzw-ims-internal.jar|974e25bac72817ae3be5f1bfe3ddfb3822248a8c
+vendor/etc/permissions/qti-vzw-ims-internal.xml|3e41b645dd4ad8bad6775c103a34bfd7a507a4f7
+vendor/bin/imsdatadaemon|182768a5c51af164caec3964af12fd3639c08128
+vendor/bin/imsqmidaemon|04be996ca97e8d0ceba605b027deb2c95ef40e9a
+vendor/lib/libimscamera_jni.so|c2736a02ac1ee6ab6c4ecd62cf04e22d196b33eb
+vendor/lib/lib-imsdpl.so|7e86719548ba07b20a07e5424e5ea8dbfdb1d3c9
+vendor/lib/libimsmedia_jni.so|241ace463d74b30cd7c3456b385cabf64c97d211
+vendor/lib/lib-imsqimf.so|72f3d3435504a5b1f284bb1867982821b77e811c
+vendor/lib/lib-imsSDP.so|6d55faa14b2cd049907ec1d0a060efe685ba7e96
+vendor/lib/lib-imsxml.so|3f3165879af535a6fb83710847ace065fd514133
+vendor/lib/lib-rcsjni.so|83114cff47f155e20f7ee942294bac946f713e41
+vendor/lib/lib-rtpcommon.so|afccef8edcb66fe5ab563967e3152f09b0e86f4a
+vendor/lib/lib-rtpcore.so|600ee02d2e827c8b22a63816a2f80204fa9e2c58
+vendor/lib/lib-rtpdaemoninterface.so|3bf68abd65bd66fce8a5163f472b71aabbcae63b
+vendor/lib/lib-rtpsl.so|c9bc38cb3061829f7776569c5835a1ac02c6cd98
+vendor/lib/librtp_jni.so|a2684255744d3dbf6868433e656065297fce9ac5
+vendor/lib/vendor.qti.imsrtpservice@1.0-service-Impl.so|e0be432b9f3bf90661e815e04d26cd05849d2769
+vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so|09b95885ae003997130d68dc3960cea5cff6376a
+vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so|2b0bc7a4d5b2d01eeb8f277e0be3ca05236ae383
+vendor/lib/lib-dplmedia.so|51adb0185654ef45cf0e435f7f3ceb3afba6866f
 
-# Peripheral Manager
-vendor/bin/pm-service
-vendor/lib/libperipheral_client.so
+# Qualcomm framework - from athene
+vendor/bin/tftp_server|ef4bb400c3bd36598fe7d6586124f56cca6f042a
+vendor/bin/irsc_util|38ab70f2974a4970f0cd15e5c860e071d54b3ca2
+vendor/lib/libdiag.so|011dcda645c18a7ee2bb9479c92b3be03392b4ec
+vendor/lib/libdiag_system.so|f0284ac4e296feceaa58fdd8b4c7efedef3898f0
+vendor/lib/libDiagService.so|6df48e1056d61dd9b067c0c40052f469b8cefc99
+vendor/lib/libdsi_netctrl.so|b45ee71c61e7338b976f000fa236c2ad12a7a23b
+vendor/lib/libdsutils.so|b201a9690c524c7892ac5eef4ce89bcb51dbea21
+vendor/lib/libidl.so|9d79cd423a9c3d8e9f6282ffb83b1462b5940837
+vendor/lib/libFileMux.so|8ef35c03c3a057c360f3de702f8deda941582531
+vendor/lib/libqcci_legacy.so|70d38fb7b7c755dd610de70803b28c47594fc428
+vendor/lib/libqdi.so|b9160277b51169211dd571d305e111f849f887ee
+vendor/lib/libqdp.so|ba7b51316c1d3ea489dc564ebedad897cfe5d71c
+vendor/lib/libqmi.so|64d200fb5e9f2737b8b3976703658720caf45f97
+vendor/lib/libqmi_cci.so|47ff48c5241de4fdde4a1bf26687c8a102f8c86f
+vendor/lib/libqmi_client_helper.so|c60feb816e6acfffdb65d646e1a1fcf288fb2b54
+vendor/lib/libqmi_client_qmux.so|cd700d2684a5ee0cfe4421deb7109843813f7d19
+vendor/lib/libqmi_common_so.so|208db6e3d352c811af3f42536d5f1bf26df69904
+vendor/lib/libqmi_csi.so|157f52e73904d34ed530a5177a7347f9d5555460
+vendor/lib/libqmi_encdec.so|39167d6933012e147bf9dc153154ff2f105354af
+vendor/lib/libqmiservices.so|8df18817c510a7d79fab93c10a02205debec5b97
+vendor/lib/libsmemlog.so|8f0e2c95280922335bfa38117253dd8d6381dfeb
 
-# Sensorhub Firmware
-etc/firmware/sensorhubfw.bin|90ec2a32050faf764529c22639e7a2a0196e28fc
-etc/firmware/sensorhubver.txt|7719a1c782a1ba91c031a682a0a2f8658209adbf
+# Radio - from athene
+-framework/qti-telephony-common.jar|b1953a3599255f08f1785c677d22810f65e0167b
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|abb31a2002cf03971aad7a0a7707f2f095f9f79c
+vendor/etc/permissions/qti_libpermissions.xml|92e5814133dbc1f82fce898374d042a42c9ecf9d
+vendor/etc/permissions/qti_permissions.xml|2826b33ed8e2756cc748c80bd6c466ff8af97ac5
+vendor/bin/netmgrd|c4da87b3a81cef3574c87d7b7ae466efeb573e2a
+vendor/bin/qmuxd|89df9a0cd00f7c0e8af1a81eb9b79a22fa128b7d
+vendor/bin/rmt_storage|e586c4429dc20994e2b9203ef7f269a648e0a0b5
+vendor/bin/qmi_motext_hook|fc143dd0db61ca074768ef7a38399e229e987dbb
+vendor/etc/data/dsi_config.xml|c85722f90588edd3288b953b0ab97c81edeabfa9
+vendor/etc/data/netmgr_config.xml|ff529c0538aac21b1ed900f4ab59a303c9755f0b
+vendor/etc/data/qmi_config.xml|511c4acabc45860fea663c594ec587b622dab68f
+vendor/etc/permissions/qcnvitems.xml|dd47edbccc24a5c254dca18250c0136ecab4f0d6
+vendor/etc/permissions/qcrilhook.xml|5a65b197fbc65e3e89e829d07da11904eae3e938
+-vendor/framework/qcnvitems.jar|79770391a25d1288b2eb21eac86175ad6853d765
+-vendor/framework/qcrilhook.jar|574f21d98f3ecd5a44b2d4adcb073387a6a48367
+vendor/lib/libadropbox.so|ca28473cf3b5cb2332165f27faeeff349826ef6f
+vendor/lib/libmdmcutback.so|00bc4a9f5ef3b287abc5940c9f9f205dabe4059a
+vendor/lib/libmotext_inf.so|26cf6beaacbf1717a6c7ee2494a8a393a8a813b6
+vendor/lib/libqmimotext.so|942dff976231fa263dff5d49246e91ff1eb49326
+vendor/radio/qcril_database/qcril.db|3d351b00fce885b4c67921f1042487838514ce17
+vendor/lib/libconfigdb.so|054dd1f94a60fa574c7cf28bc5d29c9607898ca8
+vendor/lib/liblqe.so|9106699970bc93c629ed516e43e89693aeab9bae
+vendor/lib/libmdmdetect.so|95801f5422d597d4494c1acb1aab98fd53437898
+vendor/lib/libnetmgr.so|5fa468c46accd83917ed9b99db08f66ba00f276d
+vendor/lib/libril-qc-ltedirectdisc.so|f1f8a8da58e9c09512fb0bb29b61ea5d9d8af251
+vendor/lib/libril-qc-qmi-1.so|37d6c333b3f42941d7b46f539e679dd075fb6619
+vendor/lib/libril-qc-radioconfig.so|4140f20e3b34d0f803ddd5433e52e1750fd9356b
+vendor/lib/libril-qcril-hook-oem.so|05a73250caebea4daf4422ee9ad2b886be771107
+vendor/lib/librilqmiservices.so|22b0e682c006d54ea788ef1689f8fbb43054371a
+vendor/lib/libsettings.so|380ba180ab53849ecd7cf3cc68c695489e48ec1e
+vendor/lib/libsystem_health_mon.so|edd016304d905704e73d7f5a8bd15c2193f26cc2
+vendor/lib/libxml.so|cc06bb315200a8558ef04e282539fba80baabc95
+vendor/lib/libsubsystem_control.so|f5c1d1b50ff9dde8b440d7606aa43e787b6faa72
+vendor/lib/libSubSystemShutdown.so|dfd0b427ab94d4fdc3b0ed7cb51868586a26d0e7
+vendor/lib/libvoice-svc.so|04a2cd271ed0422624492056fc3a4ac9a5bb634a
+-vendor/app/QtiTelephonyService/QtiTelephonyService.apk|08e778ceac06a0a28233b87f4b54216dcd61d5e6
+-vendor/framework/QtiTelephonyServicelibrary.jar|0f77bccab08451e7f0cee869aecfad5e01e8c9d6
+vendor/lib/libqcmaputils.so|6a0ebd7a27ccb3a88bd5c67ce32d997ee97a3b61
+vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so|99fcd0ad9858fc203ec346ba528e5f01c92da729
+vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so|0834c035a26011bbddcb932a2605683f2de4f691
+vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so|ffb2d33c5f048d790283be532616a11279a40756
+vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so|b465f1f891a41b8f2dd641cfcbd8a960d7f9b1a3
+vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so|19bfa9566acf9f3d5bdbd8781934d8cf1a22c3c3
+vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|786e80a37ba21418f166446ea813083bbfea77bb
+vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|8b504cf1a4af3582f6513ba9dcb3a94bf56a5a81
+vendor/lib/libqcrilFramework.so|140e4c122be8abc9180d88ded183884d8a0e57a6
+vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so|d9a17cca6d90c8febaeb357e48e5a3cbfd10054a
+
+# Peripheral Manager - from athene
+vendor/bin/pm-service|0f2796b07c944e89dbc4196a39083bc25897b796
+vendor/lib/libperipheral_client.so|854fe5a441579c22e74070777d7391d1418f3bb7
+vendor/bin/pm-proxy|95c316bc1810cc7338d06ddd79e7e1ca702a00b8
+
+# Perf - from nowhere
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|3a266ba24abf70b58ee8438b2f205ce283b9e95f
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
+vendor/etc/perf/perfboostsconfig.xml|3d4aa8615d9b007727604c584a8ebe8812ae6c3e
+vendor/lib/libfeedbackhandler.so|370453e642770c038b69da6da92b3490fe7d2f93
+vendor/lib/libperfgluelayer.so|0e24b1e39dd3203514ab445530b6b29b0dd9b969
+vendor/lib/libqti-perfd.so|b806efa38c19680501ab329e3a3020999d5b1e8a
+vendor/lib/libqti-util.so|26c0e29785df406d2a4a1efbe6b1760e9d780b26
+vendor/lib/libqti-utils.so|099c8d4824e39c0985c45f0212849f679768cddb
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so|7ab33bafde073de04365e0134736b80b0f19bf20
+vendor/lib/libqti-perfd-client.so|bd14a4befc446699bd02c93c7f7492d4c88938bc
+lib/vendor.qti.hardware.iop@1.0.so|47ece3c3d705a25688d9272646c891498034f227
+lib/vendor.qti.hardware.iop@2.0.so|0c8cb96a4e825942ea394cf6e8378005e1e56dfc
+vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so|c3d9bacc8b23e7869c8fab095e929fb279c9b399
+vendor/lib/libqti-iopd-client.so|fa5e4a2f32ed0f2067512984c6770563ed3e264e
+vendor/lib/libqti-iopd.so|fbfb334ca824b190e9f82197ea5f107716cbc286
+vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so|22d584e6103a2849657ae1a14604bcb7b42c3ad5
+vendor/lib/vendor.qti.hardware.iop@2.0_vendor.so|970b024630c425de6a574b4652552b2bfb1d886f
+
+# Sensors
+vendor/lib/hw/sensorhub.msm8916.so
+
+# STLport
+vendor/lib/libstlport.so
 
 # Thermal
-vendor/bin/thermal-engine
+vendor/bin/thermal-engine|c75c2d2a7c341cb6e03a27315c2f5dc1f67aadfb
 vendor/lib/libthermalclient.so
 vendor/lib/libthermalioctl.so
 
-# Time services - from Nowhere
-vendor/lib/libtime_genoff.so|fe3a618a03940fcc62cfc27b202809110340904e
+# Time services
+-vendor/app/TimeService/TimeService.apk
+vendor/bin/time_daemon
+vendor/lib/libtime_genoff.so
+vendor/lib/libTimeService.so
 
 # Venus (media) firmware
-etc/firmware/venus.b00
-etc/firmware/venus.b01
-etc/firmware/venus.b02
-etc/firmware/venus.b03
-etc/firmware/venus.b04
-etc/firmware/venus.mbn
-etc/firmware/venus.mdt
+vendor/firmware/venus.b00
+vendor/firmware/venus.b01
+vendor/firmware/venus.b02
+vendor/firmware/venus.b03
+vendor/firmware/venus.b04
+vendor/firmware/venus.mbn
+vendor/firmware/venus.mdt
+
+#AptX - from aljeter
+vendor/lib/libaptXHD_encoder.so|b65cd3b72ae3e6a57901fd5b5383bfa1a88c5737
+vendor/lib/libaptX_encoder.so|b03772672144d4b750a5672c2922aded93bb0512
+vendor/lib/libldacBT_enc.so|6b9ad026c3e4dcd5cba654bd7b3848a0446f4e8c
+
+# DRM
+vendor/lib/liboemcrypto.so
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
+vendor/lib/libwvhidl.so
+
+# Pie perf stack - from aljeter
+-framework/QPerformance.jar|6805bf62ea46eab5987f27dde7789188e96e44f4
+-framework/UxPerformance.jar|fcdd30e3a7099843c53a0adeacd2bab919567c24
+vendor/etc/perf/commonresourceconfigs.xml|73fc37a6fa498a98758b5a91ebacb87ef0ffdcdf
+vendor/etc/perf/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
+vendor/etc/perf/perf-profile1.conf|95b92f79d76add1cfc6b2970225d32443fa29838
+vendor/etc/perf/perfboostsconfig.xml|3d4aa8615d9b007727604c584a8ebe8812ae6c3e
+vendor/etc/perf/targetconfig.xml|a6fafaf30ee9c57e073f6987f6016b6f9c7f1cac
+vendor/etc/perf/targetresourceconfigs.xml|4f7629e2b2f14dee788eab3d45780ff9943e6720
+vendor/lib/libperfgluelayer.so|d4136856ee1a57aa1a52ac9fe7ed1c773f0d27ae
+vendor/lib/libqti-iopd-client.so|542f821c29bf7f6ba0a0c543d2f90c8b09921ff9
+vendor/lib/libqti-perfd-client.so|a0125dc57a1e92507f0ceffc424089a1254b63d9
+vendor/lib/libqti-perfd.so|674564f696527319dc91dc99d677078574900b57
+vendor/lib/libqti-util.so|3768499b52852607d07685fc36e469b44ad7f5c0
+vendor/lib/libqti-utils.so|52cd068e6e2ec6cee49ff3591384725ff80b29d5
+vendor/lib/libqti_performance.so|dc0995fa3217b6c44029b55b5151adaae515392a
+vendor/lib/vendor.qti.hardware.iop@1.0.so|8473202ded20264fa38d40ad66ebda39655a6c6b
+vendor/lib/vendor.qti.hardware.iop@2.0.so|24d6a736a5729224cd1ee6b599d5aa865b6b2f52
+vendor/lib/vendor.qti.hardware.perf@1.0.so|c14b12ffc4b5f1b2af4faa8d020de5e20564d510
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|9303212148a3824c7641c8ceed2c073138a3ef79
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|ae3dfd2f88ba9db8d634eae722c2d1ab01ff7063
+
+# CNE - from athene
+-priv-app/CNEService/CNEService.apk|2768dd56bc20d56a66f984eb0b0fe2ce2a459719
+-framework/cneapiclient.jar|1f21d2c86b1899b5aaff96ec6ce41de0ed38ebf0
+-framework/com.quicinc.cne.api-V1.0-java.jar|f11667bed94166ad2a050c1e1b542d06699ab3bc
+-framework/com.quicinc.cne.jar|329700f6a33b8de9294fb6441724804565baef53
+vendor/bin/cnd|87186dc8a3f0e954870d00dc60a2c85101d9effe
+vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml|578f3f8f56059bfdbef926bcc68d01c15e06951f
+vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml|1fb42c672a12b6660bdce3ea94e0c43719dd9de8
+vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml|f88e13f1dd7b82388c90358f71813026370c9ed8
+vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml|fb08e04f57797c5684bf734f7ce4bb4968859b18
+vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml|eb726ad1a42b9b78b9ee3b821fc108611bc9eeac
+vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml|be97b46b0d07ee2f6ebcc677d8099ed2140d5d85
+vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml|e7ca213d0998cb3a6a603ad3eca7bda69830ff55
+vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml|169a5209000e357a1a3183e8e5bfdf6fd07c2787
+vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml|4be4060e8ac2d9fcea490feec7938cadcff46e1f
+vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml|f88e13f1dd7b82388c90358f71813026370c9ed8
+vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml|96101f6b01436a02572c67a469ff67ccfb738874
+vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml|cef14ff8a160c7ad719b85d024a4b3301c3638d0
+vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml|8d6773a4c418d0dcc4dc9096017d2681c7a1defe
+vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml|c89d3c062790b442cbe941cafc641a4e322f2d59
+vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml|ba14a9df975cf872ed0cbe28bee8fac63cd848d4
+vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml|9b123d81c9b8991499cda33b0706810e0c8fb974
+vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml|ff91feb5060a6df07e3e4d9bc99ae58bccad7649
+vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml|f76c894f3c6d5b6ed35113a088dc3174c900501b
+vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml|14d136e7fcc682311757d3edc0b9d3eaeba11815
+vendor/lib/com.quicinc.cne.server@1.0.so|865453ffb9788bb7b3c52e84b409761d63d9c7e0
+vendor/lib/com.quicinc.cne.server@2.0.so|25ae193d17d7025afff3e5080bb22babd346c86c
+vendor/lib/libcne.so|e56444c404a56d3e1d8fdba4390e7e36597d4cb9
+vendor/lib/libcneoplookup.so|ce63c7a750c16472413f00fdc3e4b63c1c7ee1ca
+vendor/lib/libcneqmiutils.so|25818762826033dc36227bdf9167b42cb715a908
+vendor/lib/vendor.qti.hardware.data.latency@1.0_vendor.so|9d0ebb511c8b5c5c7cff54c82ecb15872db046ad
+vendor/lib/com.quicinc.cne.constants@1.0.so|6fbeed81f2ee04e2077d9c3a38ff448b6accfdd9
+vendor/lib/com.quicinc.cne.constants@2.0.so|b146823aa6c7114b5d2fa9f63c61a903b35be349
+vendor/lib/com.quicinc.cne.api@1.0.so|865028df876851ebfbed7a1de214770cdca92bff
+vendor/lib/libcneapiclient.so|cdee58a843027bb7b8fbbb1ed6fffa50ef30075c
