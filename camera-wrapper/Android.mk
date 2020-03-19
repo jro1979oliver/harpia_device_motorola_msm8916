@@ -3,6 +3,7 @@ include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES := \
     framework/native/include \
+    frameworks/native/include/media/openmax \
     system/media/camera/include
 
 LOCAL_SRC_FILES := \
@@ -16,10 +17,17 @@ LOCAL_SHARED_LIBRARIES := \
     libhidltransport \
     libsensor \
     libutils \
-    android.hidl.token@1.0-utils
+    libcutils \
+    android.hidl.token@1.0-utils \
+    libnativewindow \
+    libgui
 
 LOCAL_STATIC_LIBRARIES := \
     libarect
+
+ifneq ($(filter harpia lux, $(TARGET_DEVICE)),)
+LOCAL_CFLAGS += -DCLOSE_NATIVE_HANDLE
+endif
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
