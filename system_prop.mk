@@ -14,7 +14,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.av.streaming.offload.enable=false \
     vendor.audio.offload.buffer.size.kb=64 \
     vendor.audio.offload.gapless.enabled=true \
-    vendor.voice.path.for.pcm.voip=true
+    vendor.voice.path.for.pcm.voip=true \
+    persist.vendor.audio.fluence.mode=endfire \
+    persist.vendor.audio.fluence.voicecall=true
+    ro.vendor.audio.sdk.fluencetype=fluence
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=25 \
@@ -35,6 +38,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.use_buffer_age=false \
+    ro.sf.lcd_density=380 \
     ro.opengles.version=196608 \
     debug.sf.recomputecrop=0 \
     debug.sf.disable_backpressure=1 \
@@ -107,6 +112,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
+    persist.radio.aosp_usr_pref_sel=true \
     persist.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
     persist.data.qmi.adb_logmask=0 \

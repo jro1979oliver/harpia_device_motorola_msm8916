@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,9 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter harpia lux merlin osprey surnia, $(TARGET_DEVICE)),)
-
 LOCAL_PATH := $(call my-dir)
+
+ifeq ($(TARGET_DEVICE),harpia)
+include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
@@ -75,7 +77,5 @@ $(WCNSS_CONFIG_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /data/vendor/wifi/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_CONFIG_SYMLINK)
-
-include $(call all-makefiles-under,$(LOCAL_PATH))
 
 endif

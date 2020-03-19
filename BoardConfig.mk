@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2015 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
 # limitations under the License.
 
 -include vendor/motorola/msm8916-common/BoardConfigVendor.mk
-
-VENDOR_PATH := device/motorola/msm8916-common
+-include vendor/motorola/harpia/BoardConfigVendor.mk
+DEVICE_PATH := device/motorola/harpia
 
 BOARD_VENDOR := motorola-qcom
 
@@ -42,6 +42,9 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
 
+# Asserts
+TARGET_OTA_ASSERT_DEVICE := harpia,harpia_retail
+
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_PHONY_TARGETS := true
 
@@ -65,6 +68,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8916
+TARGET_KERNEL_CONFIG := harpia_defconfig
 
 # Audio
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
@@ -133,6 +137,13 @@ USE_DEVICE_SPECIFIC_GPS := true
 DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 
 # Partitions
+
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216     # 16384 * 1024 mmcblk0p31
+BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456   # 262144 * 1024 mmcblk0p38
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16879616 # 16484 * 1024 mmcblk0p32
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560 # 2621440 * 1024 mmcblk0p41
+BOARD_PERSISTIMAGE_PARTITION_SIZE := 8388608   # 8192 * 1024 mmcblk0p29
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 11775377408 # 11499392 * 1024 mmcblk0p42
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_EXFAT_DRIVER := exfat
